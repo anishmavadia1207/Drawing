@@ -21,6 +21,7 @@ internal class Program
         var builder = provider.GetRequiredService<IWidgetDrawingBuilder>();
         builder
             .AddWidget(new Widget(new Position(10, 10), new Rectangle(30, 40)))
+            .AddWidget(new Widget(new Position(15, 30), new Square(35)))
             .AddWidget(new Widget(new Position(100, 150), new Ellipse(300, 200)))
             .AddWidget(new Widget(new Position(1, 1), new Circle(300)))
             .AddWidget(new Widget(new Position(5, 5), new Textbox(200, 100, "sample text")));

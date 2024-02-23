@@ -33,8 +33,7 @@ public static class ServiceCollectionExtensions
         @this.AddDrawingServices<DrawingService, WidgetDrawingBuilder, WidgetRenderer>(serviceLifetime);
         @this.AddSingleton<IRenderStrategy, ShapeTypeStrategy>();
         @this.AddSingleton<IRenderStrategy, PositionStrategy>();
-        @this.AddSingleton<IRenderStrategy, CircularShapeStrategy>();
-        @this.AddSingleton<IRenderStrategy, RectangularShapeStrategy>();
+        @this.AddSingleton<IRenderStrategy, ShapeSizeStrategy>();
 
         return @this;
     }
