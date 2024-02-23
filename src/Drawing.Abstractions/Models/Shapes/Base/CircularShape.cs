@@ -3,7 +3,7 @@
 /// </summary>
 namespace Drawing.Abstractions.Models.Shapes.Base;
 
-public abstract class CircularShape
+public abstract class CircularShape : IShape
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="CircularShape"/> class with the specified horizontal and vertical diameters.
