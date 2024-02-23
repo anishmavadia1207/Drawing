@@ -31,6 +31,6 @@ public class DrawingService : IDrawingService
             drawingBuilder.AppendLine(renderedWidget);
         }
 
-        return drawingBuilder.ToString();
+        return drawingBuilder.ToString().Trim();
     }
 }

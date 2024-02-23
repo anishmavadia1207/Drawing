@@ -15,5 +15,5 @@ public class PositionStrategy : IRenderStrategy
     /// A string representing the position of the widget in the format (X, Y).
     /// </returns>
     public string GetStrategyResult(Widget widget) =>
-        $"({widget.Position.X}, {widget.Position.Y})";
+        $"({widget.Position.X},{widget.Position.Y})";
 }

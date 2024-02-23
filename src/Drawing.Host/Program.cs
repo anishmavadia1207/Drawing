@@ -10,6 +10,7 @@ namespace Drawing.Host;
 
 internal class Program
 {
+    const string dashedSeparator = "----------------------------------------------------------------";
     static void Main(string[] args)
     {
         var services = new ServiceCollection();
@@ -29,6 +30,10 @@ internal class Program
         var drawing = builder.Build();
         var drawingResult = drawingService.Draw(drawing);
 
+        Console.WriteLine(dashedSeparator);
+        Console.WriteLine("Requested Drawing");
+        Console.WriteLine(dashedSeparator);
         Console.WriteLine(drawingResult);
+        Console.WriteLine(dashedSeparator);
     }
 }
