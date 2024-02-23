@@ -1,4 +1,8 @@
-﻿/// <summary>
+﻿using Drawing.Abstractions.Models.Shapes.Base;
+
+namespace Drawing.Abstractions.Models.Shapes;
+
+/// <summary>
 /// Represents a textbox, inheriting from <see cref="RectanglularShape"/>.
 /// </summary>
 public class Textbox : RectanglularShape
@@ -9,7 +13,8 @@ public class Textbox : RectanglularShape
     /// <param name="width">The width of the textbox.</param>
     /// <param name="height">The height of the textbox.</param>
     /// <param name="text">The text content of the textbox.</param>
-    public Textbox(int width, int height, string text) : base(width, height) =>
+    public Textbox(int width, int height, string text) :
+        base(width, height) =>
         Text = text;
 
     /// <summary>

@@ -1,4 +1,8 @@
-﻿/// <summary>
+﻿using Drawing.Abstractions.Models.Shapes.Base;
+
+namespace Drawing.Abstractions.Models.Shapes;
+
+/// <summary>
 /// Represents a rectangle, inheriting from <see cref="RectanglularShape"/>.
 /// </summary>
 public class Rectangle : RectanglularShape

@@ -1,5 +1,6 @@
 ﻿using Drawing.Abstractions.Models.Shapes.Base;
 
+namespace Drawing.Abstractions.Models.Shapes;
 /// <summary>
 /// Represents a circle, inheriting from <see cref="CircularShape"/>.
 /// </summary>
@@ -12,7 +13,8 @@ public class Circle : CircularShape
     /// Initializes a new instance of the <see cref="Circle"/> class with the specified diameter.
     /// </summary>
     /// <param name="diameter">The diameter of the circle.</param>
-    public Circle(int diameter) : base(diameter, diameter)
+    public Circle(int diameter) :
+        base(diameter, diameter)
     {
     }
 }

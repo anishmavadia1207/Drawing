@@ -1,4 +1,7 @@
-﻿/// <summary>
+﻿using Drawing.Abstractions.Models.Shapes.Base;
+
+namespace Drawing.Abstractions.Models.Shapes;
+/// <summary>
 /// Represents a square, inheriting from <see cref="RectanglularShape"/>.
 /// </summary>
 /// <remarks>

@@ -1,5 +1,6 @@
 ﻿using Drawing.Abstractions.Models.Shapes.Base;
 
+namespace Drawing.Abstractions.Models.Shapes;
 /// <summary>
 /// Represents an ellipse, inheriting from <see cref="CircularShape"/>.
 /// </summary>

@@ -1,4 +1,4 @@
-﻿using Drawing.Abstractions.Models.Shapes.Base;
+﻿namespace Drawing.Abstractions.Models.Shapes.Base;
 
 /// <summary>
 /// Represents an abstract rectangular shape.
