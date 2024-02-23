@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Drawing.Abstractions\Drawing.Abstractions.csproj" />
+    <ProjectReference Include="..\..\src\Drawing.Core\Drawing.Core.csproj" />
+  </ItemGroup>
+</Project>
