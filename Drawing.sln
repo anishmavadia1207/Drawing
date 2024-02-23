@@ -33,6 +33,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drawing.Abstractions", "src
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drawing.Abstractions.Test.Unit", "tests\Drawing.Abstractions.Test.Unit\Drawing.Abstractions.Test.Unit.csproj", "{C0E5302B-FF0C-48BD-AA7B-1FB948752572}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drawing.Core", "src\Drawing.Core\Drawing.Core.csproj", "{9D7774C4-6409-43BB-9FDA-9A9CCCA6C14C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{C0E5302B-FF0C-48BD-AA7B-1FB948752572}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0E5302B-FF0C-48BD-AA7B-1FB948752572}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0E5302B-FF0C-48BD-AA7B-1FB948752572}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D7774C4-6409-43BB-9FDA-9A9CCCA6C14C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D7774C4-6409-43BB-9FDA-9A9CCCA6C14C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D7774C4-6409-43BB-9FDA-9A9CCCA6C14C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D7774C4-6409-43BB-9FDA-9A9CCCA6C14C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,6 +65,7 @@ Global
 		{DE18DC58-A42D-49D9-892D-5FD5B0680470} = {E492EEB7-B424-4EB6-BAAD-7CF839F6205B}
 		{95D62977-D528-428E-A918-865E0364CDDD} = {E492EEB7-B424-4EB6-BAAD-7CF839F6205B}
 		{C0E5302B-FF0C-48BD-AA7B-1FB948752572} = {96290698-E2DC-4B6F-9DE4-DB44254BABCF}
+		{9D7774C4-6409-43BB-9FDA-9A9CCCA6C14C} = {E492EEB7-B424-4EB6-BAAD-7CF839F6205B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {51F6EB5A-0150-4157-8F84-45FF2C519C6E}
