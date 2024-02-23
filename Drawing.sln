@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34607.119
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "patterns", "patterns", "{756CCE74-1829-41DB-9C42-7101D45DD594}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Build.props = Directory.Build.props
+		patterns\SourceProjectPattern.props = patterns\SourceProjectPattern.props
+		patterns\TestProjectPattern.props = patterns\TestProjectPattern.props
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E492EEB7-B424-4EB6-BAAD-7CF839F6205B}"
+	ProjectSection(SolutionItems) = preProject
+		src\Directory.Build.props = src\Directory.Build.props
+		src\Directory.Packages.props = src\Directory.Packages.props
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{96290698-E2DC-4B6F-9DE4-DB44254BABCF}"
+	ProjectSection(SolutionItems) = preProject
+		tests\Directory.Build.props = tests\Directory.Build.props
+		tests\Directory.Packages.props = tests\Directory.Packages.props
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drawing.Host", "src\Drawing.Host\Drawing.Host.csproj", "{DE18DC58-A42D-49D9-892D-5FD5B0680470}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DE18DC58-A42D-49D9-892D-5FD5B0680470}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE18DC58-A42D-49D9-892D-5FD5B0680470}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE18DC58-A42D-49D9-892D-5FD5B0680470}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE18DC58-A42D-49D9-892D-5FD5B0680470}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DE18DC58-A42D-49D9-892D-5FD5B0680470} = {E492EEB7-B424-4EB6-BAAD-7CF839F6205B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {51F6EB5A-0150-4157-8F84-45FF2C519C6E}
+	EndGlobalSection
+EndGlobal
