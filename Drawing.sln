@@ -22,7 +22,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{96290698
 		tests\Directory.Packages.props = tests\Directory.Packages.props
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drawing.Host", "src\Drawing.Host\Drawing.Host.csproj", "{DE18DC58-A42D-49D9-892D-5FD5B0680470}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drawing.Host", "src\Drawing.Host\Drawing.Host.csproj", "{DE18DC58-A42D-49D9-892D-5FD5B0680470}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{66623410-3884-4CFA-8911-0DCCD268B59D}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drawing.Abstractions", "src\Drawing.Abstractions\Drawing.Abstractions.csproj", "{95D62977-D528-428E-A918-865E0364CDDD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,12 +41,17 @@ Global
 		{DE18DC58-A42D-49D9-892D-5FD5B0680470}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE18DC58-A42D-49D9-892D-5FD5B0680470}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE18DC58-A42D-49D9-892D-5FD5B0680470}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95D62977-D528-428E-A918-865E0364CDDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95D62977-D528-428E-A918-865E0364CDDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95D62977-D528-428E-A918-865E0364CDDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95D62977-D528-428E-A918-865E0364CDDD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{DE18DC58-A42D-49D9-892D-5FD5B0680470} = {E492EEB7-B424-4EB6-BAAD-7CF839F6205B}
+		{95D62977-D528-428E-A918-865E0364CDDD} = {E492EEB7-B424-4EB6-BAAD-7CF839F6205B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {51F6EB5A-0150-4157-8F84-45FF2C519C6E}
