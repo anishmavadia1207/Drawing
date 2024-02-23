@@ -1,6 +1,6 @@
 ﻿using Drawing.Abstractions.Models;
-using Drawing.Abstractions.Models.Shapes;
 using Drawing.Core.Services.Builders;
+using Drawing.Test.Generators;
 
 using FluentAssertions;
 
@@ -10,7 +10,7 @@ public class WidgetDrawingBuilderShould
     public void Update_Collection_When_AddingWidget()
     {
         var builder = new WidgetDrawingBuilder();
-        var widget = new Widget(new Position(10, 20), new Circle(5));
+        var widget = TestGenerator.WidgetGenerator().Generate();
 
         builder.AddWidget(widget);
 
@@ -23,8 +23,8 @@ public class WidgetDrawingBuilderShould
         var builder = new WidgetDrawingBuilder();
         var widgets = new List<Widget>
         {
-            new Widget(new Position(10, 20), new Circle(5)),
-            new Widget(new Position(30, 40), new Rectangle(6, 8))
+            TestGenerator.WidgetGenerator().Generate(),
+            TestGenerator.WidgetGenerator().Generate()
         };
 
         foreach (var widget in widgets)
@@ -32,7 +32,6 @@ public class WidgetDrawingBuilderShould
             builder.AddWidget(widget);
         }
 
-        // Act
         var widgetDrawing = builder.Build();
 
         widgetDrawing.Widgets.Should().BeEquivalentTo(widgets);

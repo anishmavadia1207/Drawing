@@ -1,9 +1,7 @@
 ﻿using Drawing.Abstractions.Models;
-using Drawing.Abstractions.Models.Shapes.Base;
+using Drawing.Test.Generators;
 
 using FluentAssertions;
-
-using NSubstitute;
 
 namespace Drawing.Abstractions.Test.Unit.Models;
 public class WidgetDrawingShould
@@ -13,8 +11,8 @@ public class WidgetDrawingShould
     {
         Widget[] widgets =
         [
-            new Widget(new Position(10, 20), Substitute.For<IShape>()),
-            new Widget(new Position(30, 40), Substitute.For<IShape>())
+            TestGenerator.WidgetGenerator().Generate(),
+            TestGenerator.WidgetGenerator().Generate()
         ];
         var widgetDrawing = new WidgetDrawing(widgets);
 

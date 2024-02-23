@@ -2,5 +2,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\Drawing.Abstractions\Drawing.Abstractions.csproj" />
     <ProjectReference Include="..\..\src\Drawing.Core\Drawing.Core.csproj" />
+    <ProjectReference Include="..\Drawing.Test.Generators\Drawing.Test.Generators.csproj" />
   </ItemGroup>
 </Project>

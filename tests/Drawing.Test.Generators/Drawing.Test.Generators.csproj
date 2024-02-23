@@ -1,6 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <ItemGroup>
     <ProjectReference Include="..\..\src\Drawing.Abstractions\Drawing.Abstractions.csproj" />
-    <ProjectReference Include="..\Drawing.Test.Generators\Drawing.Test.Generators.csproj" />
   </ItemGroup>
 </Project>
