@@ -2,6 +2,10 @@
 using Drawing.Abstractions.Services.Builders;
 
 namespace Drawing.Core.Services.Builders;
+
+/// <summary>
+/// Builder for <see cref="WidgetDrawing"/>
+/// </summary>
 public class WidgetDrawingBuilder : IWidgetDrawingBuilder
 {
     internal readonly List<Widget> _widgets = [];
