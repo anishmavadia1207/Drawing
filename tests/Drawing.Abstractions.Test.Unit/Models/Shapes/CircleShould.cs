@@ -26,8 +26,6 @@ public class CircleTests
     [InlineData(-1)]
     public void Throw_ArgumentException_When_DiameterIsZeroOrLess(int diameter)
     {
-        var faker = new Faker();
-
         var action = () => new Circle(diameter);
 
         action.Should().Throw<ArgumentException>();

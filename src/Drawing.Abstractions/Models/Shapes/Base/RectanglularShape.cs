@@ -1,4 +1,5 @@
-﻿namespace Drawing.Abstractions.Models.Shapes.Base;
+﻿
+namespace Drawing.Abstractions.Models.Shapes.Base;
 
 /// <summary>
 /// Represents an abstract rectangular shape.
@@ -10,8 +11,13 @@ public abstract class RectanglularShape : IShape
     /// </summary>
     /// <param name="width">The width of the rectangular shape.</param>
     /// <param name="height">The height of the rectangular shape.</param>
-    protected RectanglularShape(int width, int height) =>
-        (Width, Height) = (width, height);
+    protected RectanglularShape(int width, int height)
+    {
+        Validate(width, height);
+
+        (Width, Height) =
+        (width, height);
+    }
 
     /// <summary>
     /// Gets the width of the rectangular shape.
@@ -22,4 +28,21 @@ public abstract class RectanglularShape : IShape
     /// Gets the height of the rectangular shape.
     /// </summary>
     public int Height { get; }
+
+    private static void Validate(int width, int height)
+    {
+        if (width <= 0)
+        {
+            throw new ArgumentOutOfRangeException(
+                nameof(width),
+                "The width must be greater than 0.");
+        }
+
+        if (height <= 0)
+        {
+            throw new ArgumentOutOfRangeException(
+                nameof(height),
+                "The height must be greater than 0.");
+        }
+    }
 }

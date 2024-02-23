@@ -15,11 +15,11 @@ public class EllipseTests
         var horizontalDiameter = faker.Random.Int(1, 100);
         var verticalDiameter = faker.Random.Int(1, 100);
 
-        var Ellipse = new Ellipse(horizontalDiameter, verticalDiameter);
+        var ellipse = new Ellipse(horizontalDiameter, verticalDiameter);
 
         using var scope = new AssertionScope();
-        Ellipse.VerticalDiameter.Should().Be(verticalDiameter);
-        Ellipse.HorizontalDiameter.Should().Be(horizontalDiameter);
+        ellipse.VerticalDiameter.Should().Be(verticalDiameter);
+        ellipse.HorizontalDiameter.Should().Be(horizontalDiameter);
     }
 
     [Theory]
@@ -31,8 +31,6 @@ public class EllipseTests
         int horizontalDiameter,
         int verticalDiameter)
     {
-        var faker = new Faker();
-
         var action = () => new Ellipse(horizontalDiameter, verticalDiameter);
 
         action.Should().Throw<ArgumentException>();
