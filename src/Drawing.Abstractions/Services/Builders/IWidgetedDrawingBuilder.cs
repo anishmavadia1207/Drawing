@@ -1,6 +1,6 @@
 ﻿using Drawing.Abstractions.Models;
 
-namespace Drawing.Abstractions.Services;
+namespace Drawing.Abstractions.Services.Builders;
 
 /// <summary>
 /// Represents a service for building widgeted drawings.

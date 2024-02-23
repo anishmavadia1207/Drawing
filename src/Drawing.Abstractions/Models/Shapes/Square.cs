@@ -2,12 +2,12 @@
 
 namespace Drawing.Abstractions.Models.Shapes;
 /// <summary>
-/// Represents a square, inheriting from <see cref="RectanglularShape"/>.
+/// Represents a square, inheriting from <see cref="RectangularShape"/>.
 /// </summary>
 /// <remarks>
-/// a square is a special type of <see cref="RectanglularShape"/> where the width and height are equal.
+/// a square is a special type of <see cref="RectangularShape"/> where the width and height are equal.
 /// </remarks>
-public class Square : RectanglularShape
+public class Square : RectangularShape
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="Square"/> class with the specified side length.

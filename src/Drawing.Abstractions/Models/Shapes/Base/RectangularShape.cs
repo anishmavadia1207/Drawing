@@ -4,14 +4,14 @@ namespace Drawing.Abstractions.Models.Shapes.Base;
 /// <summary>
 /// Represents an abstract rectangular shape.
 /// </summary>
-public abstract class RectanglularShape : IShape
+public abstract class RectangularShape : IShape
 {
     /// <summary>
-    /// Initializes a new instance of the <see cref="RectanglularShape"/> class with the specified width and height.
+    /// Initializes a new instance of the <see cref="RectangularShape"/> class with the specified width and height.
     /// </summary>
     /// <param name="width">The width of the rectangular shape.</param>
     /// <param name="height">The height of the rectangular shape.</param>
-    protected RectanglularShape(int width, int height)
+    protected RectangularShape(int width, int height)
     {
         Validate(width, height);
 

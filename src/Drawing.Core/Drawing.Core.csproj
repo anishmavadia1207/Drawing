@@ -2,4 +2,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Drawing.Abstractions\Drawing.Abstractions.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\Renderer\" />
+  </ItemGroup>
 </Project>

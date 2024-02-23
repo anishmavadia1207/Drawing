@@ -1,7 +1,7 @@
 ﻿using Drawing.Abstractions.Models;
-using Drawing.Abstractions.Services;
+using Drawing.Abstractions.Services.Builders;
 
-namespace Drawing.Core.Services;
+namespace Drawing.Core.Services.Builders;
 public class WidgetedDrawingBuilder : IWidgetedDrawingBuilder
 {
     internal readonly List<Widget> _widgets = [];

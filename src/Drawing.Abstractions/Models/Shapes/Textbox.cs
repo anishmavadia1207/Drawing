@@ -3,9 +3,9 @@
 namespace Drawing.Abstractions.Models.Shapes;
 
 /// <summary>
-/// Represents a textbox, inheriting from <see cref="RectanglularShape"/>.
+/// Represents a textbox, inheriting from <see cref="RectangularShape"/>.
 /// </summary>
-public class Textbox : RectanglularShape
+public class Textbox : RectangularShape
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="Textbox"/> class with the specified width, height, and text.

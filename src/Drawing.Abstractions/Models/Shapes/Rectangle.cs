@@ -3,9 +3,9 @@
 namespace Drawing.Abstractions.Models.Shapes;
 
 /// <summary>
-/// Represents a rectangle, inheriting from <see cref="RectanglularShape"/>.
+/// Represents a rectangle, inheriting from <see cref="RectangularShape"/>.
 /// </summary>
-public class Rectangle : RectanglularShape
+public class Rectangle : RectangularShape
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="Rectangle"/> class with the specified width and height.
