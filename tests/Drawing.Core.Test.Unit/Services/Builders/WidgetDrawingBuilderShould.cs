@@ -1,15 +1,15 @@
 ﻿using Drawing.Abstractions.Models;
 using Drawing.Abstractions.Models.Shapes;
-using Drawing.Core.Services;
+using Drawing.Core.Services.Builders;
 
 using FluentAssertions;
 
-public class WidgetedDrawingBuilderTests
+public class WidgetDrawingBuilderShould
 {
     [Fact]
     public void Update_Collection_When_AddingWidget()
     {
-        var builder = new WidgetedDrawingBuilder();
+        var builder = new WidgetDrawingBuilder();
         var widget = new Widget(new Position(10, 20), new Circle(5));
 
         builder.AddWidget(widget);
@@ -18,9 +18,9 @@ public class WidgetedDrawingBuilderTests
     }
 
     [Fact]
-    public void Return_BuiltWidgetedDrawing_When_BuildingCollection()
+    public void Return_BuiltWidgetDrawing_When_BuildingCollection()
     {
-        var builder = new WidgetedDrawingBuilder();
+        var builder = new WidgetDrawingBuilder();
         var widgets = new List<Widget>
         {
             new Widget(new Position(10, 20), new Circle(5)),
@@ -33,8 +33,8 @@ public class WidgetedDrawingBuilderTests
         }
 
         // Act
-        var widgetedDrawing = builder.Build();
+        var widgetDrawing = builder.Build();
 
-        widgetedDrawing.Widgets.Should().BeEquivalentTo(widgets);
+        widgetDrawing.Widgets.Should().BeEquivalentTo(widgets);
     }
 }

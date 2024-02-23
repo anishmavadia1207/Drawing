@@ -13,11 +13,11 @@ public class DrawingService : IDrawingService
         _widgetRenderer = widgetRenderer;
 
 
-    public string Draw(WidgetedDrawing widgetedDrawing)
+    public string Draw(WidgetDrawing widgetDrawing)
     {
         var drawingBuilder = new StringBuilder();
 
-        foreach (var widget in widgetedDrawing.Widgets)
+        foreach (var widget in widgetDrawing.Widgets)
         {
             var renderedWidget = _widgetRenderer.Render(widget);
             drawingBuilder.AppendLine(renderedWidget);

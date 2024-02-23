@@ -6,7 +6,7 @@ using FluentAssertions;
 using NSubstitute;
 
 namespace Drawing.Abstractions.Test.Unit.Models;
-public class WidgetedDrawingShould
+public class WidgetDrawingShould
 {
     [Fact]
     public void Initialise_Widgets_When_Constructing()
@@ -16,8 +16,8 @@ public class WidgetedDrawingShould
             new Widget(new Position(10, 20), Substitute.For<IShape>()),
             new Widget(new Position(30, 40), Substitute.For<IShape>())
         ];
-        var widgetedDrawing = new WidgetedDrawing(widgets);
+        var widgetDrawing = new WidgetDrawing(widgets);
 
-        widgetedDrawing.Widgets.Should().BeEquivalentTo(widgets);
+        widgetDrawing.Widgets.Should().BeEquivalentTo(widgets);
     }
 }

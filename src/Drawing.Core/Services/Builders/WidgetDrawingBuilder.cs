@@ -2,20 +2,17 @@
 using Drawing.Abstractions.Services.Builders;
 
 namespace Drawing.Core.Services.Builders;
-public class WidgetedDrawingBuilder : IWidgetedDrawingBuilder
+public class WidgetDrawingBuilder : IWidgetDrawingBuilder
 {
     internal readonly List<Widget> _widgets = [];
 
     /// <inheritdoc/>
-    public IWidgetedDrawingBuilder AddWidget(Widget widget)
+    public IWidgetDrawingBuilder AddWidget(Widget widget)
     {
         _widgets.Add(widget);
         return this;
     }
 
     /// <inheritdoc/>
-    public WidgetedDrawing Build()
-    {
-        return new WidgetedDrawing(_widgets);
-    }
+    public WidgetDrawing Build() => new WidgetDrawing(_widgets);
 }
