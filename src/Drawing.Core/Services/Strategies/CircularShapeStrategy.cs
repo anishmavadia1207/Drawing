@@ -23,7 +23,7 @@ public class CircularShapeStrategy : IRenderStrategy
         {
             return circularShape.HorizontalDiameter == circularShape.VerticalDiameter ?
                 $"size={circularShape.HorizontalDiameter}" :
-                $"diameterH={circularShape.HorizontalDiameter} diameterV={circularShape.VerticalDiameter}";
+                $"diameterH = {circularShape.HorizontalDiameter} diameterV = {circularShape.VerticalDiameter}";
         }
 
         return string.Empty;

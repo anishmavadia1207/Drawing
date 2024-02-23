@@ -31,8 +31,12 @@ public class WidgetRenderer : IWidgetRenderer
         var widgetBuilder = new StringBuilder();
         foreach (var renderStrategy in _renderStrategies)
         {
-            widgetBuilder.Append(renderStrategy.GetStrategyResult(widget));
+            var result = renderStrategy.GetStrategyResult(widget);
+            if (!string.IsNullOrWhiteSpace(result))
+            {
+                widgetBuilder.Append(result + " ");
+            }
         }
-        return widgetBuilder.ToString();
+        return widgetBuilder.ToString().Trim();
     }
 }
