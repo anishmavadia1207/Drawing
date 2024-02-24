@@ -1,40 +1,35 @@
 # Drawing
 
-## Design Explained
+## Design Overview
 
-- There are 3 main projects in order to separate out different primary concerns.
-	- .Host is the "UI" project just visualising out outputs
-	- .Abstractions is the service and model definitions kept separate to allow for a more modular design
-	- .Core is where the heavy lifting happens, being the implementations of the abstractions glued together using DI
-- Another big reason why I chose to split the projects in this way is that the "UI" project is not strongly coupled to the "Core" project.
-	- They are linked together in DI and leverage the abstraction contracts in order to promote high cohesion with low coupling.
+- The project architecture is divided into three main areas to clearly separate concerns.
+	- `.Host` serves as the visual interface, focusing on displaying outputs.
+	- `.Abstractions` houses service and model definitions, maintained separately to foster modularity.
+	- `.Core` is the engine room, where the practical implementations of abstractions come to life through Dependency Injection (DI).
+- A pivotal reason for this division is to ensure the "UI" component remains loosely connected to the "Core". This is achieved through DI, leveraging abstract contracts to ensure high cohesion without tight coupling.
 
-- One key aspect I was particularly focused on was not coupling together a particular shape type to it's render method.
-	- The rendering logic is an isolated and singular responsibility built to be modular and extendable
-- I leverage SOA in order to have a service contract definition and to leverage only the interface contracts in consuming code.
-	- I use this pattern to allow for easier modification and development whereby we can modify the internals of a implementation without breaking the contract. 
+- A particular focus was to avoid directly linking specific shapes to their rendering logic.
+	- The rendering approach is designed to be modular and scalable, tasked with a singular focus.
+- By adopting Service-Oriented Architecture (SOA), clear service contracts were established, relying solely on interface contracts for code consumption.
+	- This approach provides flexibility for internal modifications without altering the foundational contract.
 
 ### Core
-- The core project is where the majority of the heavy lifting is happening.
-- In this project, I leveraged the strategy pattern in order to essentially build up the rendered outputs
-	- This allows for flexible code re-use for the shared aspects of rendering
-	- It allows for easy extension as and when new rendering requirements arise
-	- It is very modular which allows for testing on each level in isolation as well as the component as a whole
-- The builder pattern has also been leveraged here.
-	- This allows for a easy and fluent method of chaining together widgets
-	- Adds an easy to use class for drawing management
-- The main 3 benefits of the way this project has been designed are:
-	- Flexibility: New rendering strategies can be easily added without changing existing code, adhering to the open/closed principle.
-	- Decoupling: Rendering logic is decoupled from the widget representation and drawing service, simplifying maintenance and scalability.
-	- Reusability: The strategy and service components can be reused across different parts of the application or in different projects with similar requirements.
-
+- The core project is where the magic happens.
+- Here, the strategy pattern was embraced to build out rendered outputs creatively.
+	- This strategy enables efficient code reuse for common rendering tasks and seamlessly integrates new rendering capabilities as needed.
+	- Its modular nature also significantly simplifies testing, whether for individual components or the system as a whole.
+- The builder pattern was also implemented.
+	- This approach streamlines the widget assembly process, making it intuitive and manageable.
+	- It introduces a user-friendly class for overseeing drawing tasks.
+- The design of this project stands out for its:
+	- **Flexibility**: New rendering strategies can be incorporated effortlessly, in line with the open/closed principle.
+	- **Decoupling**: By separating rendering logic from widget representations and drawing services, maintenance has been simplified and scalability enhanced.
+	- **Reusability**: Both strategy and service components are crafted for broad applicability, whether within this project or elsewhere.
 
 ### Tests
-- There are unit test projects for the abstractions as well as the core
-	- These cover each class in isolation
-- We have a Core.Test.Component project which is used to test the core project as a whole with all of the strategies used. 
+- The testing framework includes unit tests for both the abstractions and the core components, examining each class in isolation.
+- Additionally, the `Core.Test.Component` project facilitates comprehensive testing of the core project, leveraging all implemented strategies.
 
-## Ways to improve
-- Use FluentValidations in place of the Validate methods in the core models
-- Adding extensions to WidgetDrawingBuilder to allow for specific object creation.
-	- for example `builder.AddRectangle(...)`
+## Enhancement Suggestions
+- Transition to using FluentValidation instead of core model validate methods for more streamlined and powerful validation.
+- Introduce extensions to `WidgetDrawingBuilder` for more intuitive object creation, like `builder.AddRectangle(...)`, enhancing the developer experience.
