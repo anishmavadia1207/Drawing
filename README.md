@@ -6,6 +6,8 @@
 	- .Host is the "UI" project just visualising out outputs
 	- .Abstractions is the service and model definitions kept separate to allow for a more modular design
 	- .Core is where the heavy lifting happens, being the implementations of the abstractions glued together using DI
+- Another big reason why I chose to split the projects in this way is that the "UI" project is not strongly coupled to the "Core" project.
+	- They are linked together in DI and leverage the abstraction contracts in order to promote high cohesion with low coupling.
 
 - One key aspect I was particularly focused on was not coupling together a particular shape type to it's render method.
 	- The rendering logic is an isolated and singular responsibility built to be modular and extendable
