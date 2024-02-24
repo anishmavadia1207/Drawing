@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Drawing.Abstractions\Drawing.Abstractions.csproj" />
+    <ProjectReference Include="..\..\src\Drawing.Core\Drawing.Core.csproj" />
+  </ItemGroup>
+</Project>
