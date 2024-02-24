@@ -4,7 +4,4 @@
     <ProjectReference Include="..\..\src\Drawing.Core\Drawing.Core.csproj" />
     <ProjectReference Include="..\Drawing.Test.Generators\Drawing.Test.Generators.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Services\Strategies\" />
-  </ItemGroup>
 </Project>
