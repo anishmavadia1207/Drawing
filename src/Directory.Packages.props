@@ -5,6 +5,8 @@
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
+    <PackageVersion Include="KafkaFlow" Version="3.0.3" />
+    <PackageVersion Include="KafkaFlow.Microsoft.DependencyInjection" Version="3.0.3" />
     <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
     <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
   </ItemGroup>
