@@ -1,4 +1,6 @@
-﻿using Drawing.Producers.Constants;
+﻿using Confluent.Kafka;
+
+using Drawing.Producers.Constants;
 
 using KafkaFlow;
 
@@ -25,11 +27,16 @@ public static class ServiceCollectionExtensions
         string kafkaPassword) =>
         @this.AddKafka(kafka =>
             kafka.AddCluster(cluster => cluster
-                .WithBrokers([kafkaClusterUrl])
-                .WithSecurityInformation(security =>
-                {
-                    security.SaslUsername = kafkaUsername;
-                    security.SaslPassword = kafkaPassword;
-                })
-                .CreateTopicIfNotExists(KafkaKeys.ShapeTopicName, 1, 1)));
+                    .WithBrokers([kafkaClusterUrl])
+                    .WithSecurityInformation(security =>
+                    {
+                        security.SaslUsername = kafkaUsername;
+                        security.SaslPassword = kafkaPassword;
+                    })
+                    .AddProducer(KafkaKeys.ShapeTopicName, producer =>
+                    {
+                        producer.DefaultTopic(KafkaKeys.ShapeTopicName);
+                        producer.WithCompression(CompressionType.Gzip);
+                    })
+                    .CreateTopicIfNotExists(KafkaKeys.ShapeTopicName, 1, 1)));
 }
