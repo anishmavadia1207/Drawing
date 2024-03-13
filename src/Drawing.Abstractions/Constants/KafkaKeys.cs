@@ -1,4 +1,4 @@
-﻿namespace Drawing.Producers.Constants;
+﻿namespace Drawing.Abstractions.Constants;
 
 /// <summary>
 /// Constants for Kafka keys

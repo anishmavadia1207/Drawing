@@ -1,7 +1,7 @@
 ﻿using Confluent.Kafka;
 
+using Drawing.Abstractions.Constants;
 using Drawing.Abstractions.Services.Producers;
-using Drawing.Producers.Constants;
 
 using KafkaFlow;
 
