@@ -20,7 +20,7 @@ public static class ServiceCollectionExtensions
     /// <param name="kafkaUsername">The Kafka username</param>
     /// <param name="kafkaPassword">The Kafka password</param>
     /// <returns>The modified IServiceCollection</returns>
-    public static IServiceCollection AddDrawingKafkaProducers(
+    public static IServiceCollection AddDrawingKafkaConsumers(
         this IServiceCollection @this,
         string kafkaClusterUrl,
         string kafkaUsername,
