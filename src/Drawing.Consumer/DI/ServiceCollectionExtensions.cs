@@ -3,8 +3,7 @@
 using Drawing.Abstractions.Constants;
 
 using KafkaFlow;
-
-using Microsoft.Extensions.DependencyInjection;
+using KafkaFlow.Configuration;
 
 namespace Drawing.Consumer.DI;
 
@@ -20,24 +19,15 @@ public static class ServiceCollectionExtensions
     /// <param name="kafkaUsername">The Kafka username</param>
     /// <param name="kafkaPassword">The Kafka password</param>
     /// <returns>The modified IServiceCollection</returns>
-    public static IServiceCollection AddDrawingKafkaConsumers(
-        this IServiceCollection @this,
-        string kafkaClusterUrl,
-        string kafkaUsername,
-        string kafkaPassword) =>
-        @this
-        .AddKafka(kafka =>
-            kafka.AddCluster(cluster => cluster
-                    .WithBrokers([kafkaClusterUrl])
-                    .AddConsumer(consumer => consumer
+    public static IClusterConfigurationBuilder AddDrawingKafkaConsumers(this IClusterConfigurationBuilder @this) =>
+        @this.AddConsumer(consumer => consumer
                         .Topic(KafkaKeys.ShapeTopicName)
                         .WithGroupId(Guid.NewGuid().ToString())
                         .WithBufferSize(1)
                         .WithWorkersCount(1)
                         .AddMiddlewares(middleware => middleware
-                            .AddDeserializer(_ => new Serializer())
-                            .AddTypedHandlers(handlers => handlers.AddHandler<ShapeConsumer>())))
-                    .CreateTopicIfNotExists(KafkaKeys.ShapeTopicName, 1, 1)));
+                            .AddDeserializer<Serializer>()
+                            .AddTypedHandlers(handlers => handlers.AddHandler<ShapeConsumer>())));
 }
 
 internal class Serializer : IDeserializer
