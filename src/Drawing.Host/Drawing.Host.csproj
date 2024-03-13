@@ -10,7 +10,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Drawing.Abstractions\Drawing.Abstractions.csproj" />
+    <ProjectReference Include="..\Drawing.Consumer\Drawing.Consumer.csproj" />
     <ProjectReference Include="..\Drawing.Core\Drawing.Core.csproj" />
+    <ProjectReference Include="..\Drawing.Producers\Drawing.Producers.csproj" />
   </ItemGroup>
 
 </Project>

@@ -29,14 +29,9 @@ public static class ServiceCollectionExtensions
         .AddKafka(kafka =>
             kafka.AddCluster(cluster => cluster
                     .WithBrokers([kafkaClusterUrl])
-                    .WithSecurityInformation(security =>
-                    {
-                        security.SaslUsername = kafkaUsername;
-                        security.SaslPassword = kafkaPassword;
-                    })
                     .AddConsumer(consumer => consumer
                         .Topic(KafkaKeys.ShapeTopicName)
-                        .WithGroupId("shape")
+                        .WithGroupId(Guid.NewGuid().ToString())
                         .WithBufferSize(1)
                         .WithWorkersCount(1)
                         .AddMiddlewares(middleware => middleware

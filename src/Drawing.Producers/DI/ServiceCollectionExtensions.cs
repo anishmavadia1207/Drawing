@@ -32,11 +32,6 @@ public static class ServiceCollectionExtensions
         .AddKafka(kafka =>
             kafka.AddCluster(cluster => cluster
                     .WithBrokers([kafkaClusterUrl])
-                    .WithSecurityInformation(security =>
-                    {
-                        security.SaslUsername = kafkaUsername;
-                        security.SaslPassword = kafkaPassword;
-                    })
                     .AddProducer<ShapeProducer>(producer =>
                     {
                         producer.DefaultTopic(KafkaKeys.ShapeTopicName);

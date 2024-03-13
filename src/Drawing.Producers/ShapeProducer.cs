@@ -13,6 +13,6 @@ public class ShapeProducer : IShapeProducer
 
     /// <inheritdoc/>
     public Task ProduceAsync() =>
-        _messageProducer.ProduceAsync(Guid.NewGuid(), new CreateShapeMessage());
+        _messageProducer.ProduceAsync(Guid.NewGuid().ToString(), new CreateShapeMessage());
 
 }
