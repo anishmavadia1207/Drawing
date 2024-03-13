@@ -1,4 +1,5 @@
-﻿using Drawing.Abstractions.Services.Producers;
+﻿using Drawing.Abstractions.Messages;
+using Drawing.Abstractions.Services.Producers;
 
 using KafkaFlow;
 
@@ -12,6 +13,6 @@ public class ShapeProducer : IShapeProducer
 
     /// <inheritdoc/>
     public Task ProduceAsync() =>
-        _messageProducer.ProduceAsync(Guid.NewGuid(), Guid.NewGuid());
+        _messageProducer.ProduceAsync(Guid.NewGuid(), new CreateShapeMessage());
 
 }

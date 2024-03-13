@@ -1,4 +1,6 @@
-﻿using Drawing.Abstractions.Constants;
+﻿using System.Text.Json;
+
+using Drawing.Abstractions.Constants;
 
 using KafkaFlow;
 
@@ -32,5 +34,19 @@ public static class ServiceCollectionExtensions
                         security.SaslUsername = kafkaUsername;
                         security.SaslPassword = kafkaPassword;
                     })
+                    .AddConsumer(consumer => consumer
+                        .Topic(KafkaKeys.ShapeTopicName)
+                        .WithGroupId("shape")
+                        .WithBufferSize(1)
+                        .WithWorkersCount(1)
+                        .AddMiddlewares(middleware => middleware
+                            .AddDeserializer(_ => new Serializer())
+                            .AddTypedHandlers(handlers => handlers.AddHandler<ShapeConsumer>())))
                     .CreateTopicIfNotExists(KafkaKeys.ShapeTopicName, 1, 1)));
+}
+
+internal class Serializer : IDeserializer
+{
+    public async Task<object> DeserializeAsync(Stream input, Type type, ISerializerContext context) =>
+        await JsonSerializer.DeserializeAsync(input, type) ?? throw new InvalidOperationException();
 }

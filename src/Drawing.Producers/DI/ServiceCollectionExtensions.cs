@@ -1,4 +1,6 @@
-﻿using Confluent.Kafka;
+﻿using System.Text.Json;
+
+using Confluent.Kafka;
 
 using Drawing.Abstractions.Constants;
 using Drawing.Abstractions.Services.Producers;
@@ -39,7 +41,14 @@ public static class ServiceCollectionExtensions
                     {
                         producer.DefaultTopic(KafkaKeys.ShapeTopicName);
                         producer.WithCompression(CompressionType.Gzip);
+                        producer.AddMiddlewares(middleware => middleware.AddSerializer(_ => new Serializer()));
                     })
                     .CreateTopicIfNotExists(KafkaKeys.ShapeTopicName, 1, 1)))
         .AddScoped<IShapeProducer, ShapeProducer>();
+}
+
+internal class Serializer : ISerializer
+{
+    public async Task SerializeAsync(object message, Stream output, ISerializerContext context) =>
+        await JsonSerializer.SerializeAsync(output, message);
 }
