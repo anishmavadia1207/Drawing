@@ -9,9 +9,4 @@ public static class KafkaKeys
     /// The topic name for shapes
     /// </summary>
     public const string ShapeTopicName = "Shapes";
-
-    /// <summary>
-    /// The name of the shape producer
-    /// </summary>
-    public const string ShapeProducerName = "ShapeProducer";
 }

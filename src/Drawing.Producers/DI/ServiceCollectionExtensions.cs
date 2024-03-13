@@ -33,7 +33,7 @@ public static class ServiceCollectionExtensions
                         security.SaslUsername = kafkaUsername;
                         security.SaslPassword = kafkaPassword;
                     })
-                    .AddProducer(KafkaKeys.ShapeTopicName, producer =>
+                    .AddProducer<ShapeProducer>(producer =>
                     {
                         producer.DefaultTopic(KafkaKeys.ShapeTopicName);
                         producer.WithCompression(CompressionType.Gzip);
