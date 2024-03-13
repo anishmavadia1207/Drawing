@@ -1,5 +1,6 @@
 ﻿using Confluent.Kafka;
 
+using Drawing.Abstractions.Services.Producers;
 using Drawing.Producers.Constants;
 
 using KafkaFlow;
@@ -25,7 +26,8 @@ public static class ServiceCollectionExtensions
         string kafkaClusterUrl,
         string kafkaUsername,
         string kafkaPassword) =>
-        @this.AddKafka(kafka =>
+        @this
+        .AddKafka(kafka =>
             kafka.AddCluster(cluster => cluster
                     .WithBrokers([kafkaClusterUrl])
                     .WithSecurityInformation(security =>
@@ -38,5 +40,6 @@ public static class ServiceCollectionExtensions
                         producer.DefaultTopic(KafkaKeys.ShapeTopicName);
                         producer.WithCompression(CompressionType.Gzip);
                     })
-                    .CreateTopicIfNotExists(KafkaKeys.ShapeTopicName, 1, 1)));
+                    .CreateTopicIfNotExists(KafkaKeys.ShapeTopicName, 1, 1)))
+        .AddScoped<IShapeProducer, ShapeProducer>();
 }
