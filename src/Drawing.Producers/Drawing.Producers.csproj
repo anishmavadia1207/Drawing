@@ -1,9 +1,0 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-  <ItemGroup>
-    <PackageReference Include="KafkaFlow" />
-    <PackageReference Include="KafkaFlow.Microsoft.DependencyInjection" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Drawing.Abstractions\Drawing.Abstractions.csproj" />
-  </ItemGroup>
-</Project>
